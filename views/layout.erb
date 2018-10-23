@@ -12,6 +12,12 @@
     <div class="signup"> <a href="/signup">signup</a>
     </div>
   </div>
+  <% if session[:user_id] %>
+    logged in as <%= current_user.email %>
+    <% else %>
+    not logged in
+  <% end %>
+  
   <%= yield %>
 
 </body>
