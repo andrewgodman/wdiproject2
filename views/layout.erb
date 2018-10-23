@@ -14,6 +14,10 @@
   </div>
   <% if session[:user_id] %>
     logged in as <%= current_user.email %>
+    <form action="/session" method="delete">
+      <input type="hidden" name="_method" value="delete">
+      <button>logout</button>
+    </form>
     <% else %>
     not logged in
   <% end %>

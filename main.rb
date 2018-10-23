@@ -42,6 +42,11 @@ post '/session' do
   redirect to('/')
 end
 
+delete '/session' do
+  session[:user_id] = nil
+  redirect to ('/')
+end
+
 get '/signup' do
   erb :signup
 end
