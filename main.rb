@@ -50,3 +50,16 @@ end
 get '/signup' do
   erb :signup
 end
+
+post '/signup' do
+  user = User.new
+  user.first_name= params[:firstname]
+  user.last_name= params[:lastname]
+  user.email= params[:email]
+  user.password= params[:password]
+  user.save
+
+  session[:user_id] = user.id
+
+  redirect '/'
+end
