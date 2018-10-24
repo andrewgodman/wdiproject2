@@ -72,11 +72,15 @@ post '/activity' do
 end
 
 post '/activity/new' do
-  activity = GroupActivity.new
-  activity.activity_organiser=session[:user_id]
-  activity.start_time = params[:starttime]
-  activity.end_time = params[:endtime]
-  activity.location = params[:location]
-  activity.save
-  redirect '/'
+  if logged_in?
+    activity = GroupActivity.new
+    activity.activity_organiser=session[:user_id]
+    activity.start_time = params[:starttime]
+    activity.end_time = params[:endtime]
+    activity.location = params[:location]
+    activity.save
+    redirect '/'
+  else
+    redirect '/signup'
+  end
 end
