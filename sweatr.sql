@@ -11,9 +11,9 @@ CREATE TABLE users(
 CREATE TABLE group_activities(
   id SERIAL PRIMARY KEY, 
   start_time TIMESTAMP,
+  end_time TIMESTAMP,
   location VARCHAR(40),
   activity_organiser INTEGER,
-  FOREIGN KEY (activity_organiser) REFERENCES users(id),
-  end_time TIMESTAMP
+  FOREIGN KEY (activity_organiser) REFERENCES users(id)
 );
 
