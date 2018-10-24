@@ -6,7 +6,7 @@
     <p>Location: <%=activity.location%></p>
     <p>User: <%=activity.organiser.user_name%></p>
     <%if logged_in? && activity.organiser.id != current_user.id%>
-      <button>interested</button>
+      <button>attending</button>
     <%end%>
    </div>
 
