@@ -64,3 +64,17 @@ post '/signup' do
 
   redirect '/'
 end
+
+post '/activity' do
+  erb :activity
+end
+
+post '/activity/new' do
+  activity = GroupActivity.new
+  activity.activity_organiser=session[:user_id]
+  activity.start_time = params[:starttime]
+  activity.end_time = params[:endtime]
+  activity.location = params[:location]
+  activity.save
+  redirect '/'
+end
