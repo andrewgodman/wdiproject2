@@ -24,3 +24,11 @@ CREATE TABLE activity_categories(
   id SERIAL PRIMARY KEY,
   name VARCHAR(20)
 );
+
+CREATE TABLE attending_activities(
+  id SERIAL PRIMARY KEY,
+  group_activity_id INTEGER,
+  user_id INTEGER,
+  FOREIGN KEY (group_activity_id) REFERENCES group_activities (id) ON DELETE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+);
