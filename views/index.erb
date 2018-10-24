@@ -5,6 +5,9 @@
     <p>End Time: <%=activity.end_time%></p>
     <p>Location: <%=activity.location%></p>
     <p>User: <%=activity.organiser.user_name%></p>
+    <%if logged_in? && activity.organiser.id != current_user.id%>
+      <button>interested</button>
+    <%end%>
    </div>
 
   <% end %>
