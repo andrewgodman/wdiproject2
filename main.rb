@@ -25,7 +25,9 @@ helpers do
 end
 
 get '/' do
+  @activity = GroupActivity.all
   erb :index
+
 end
 
 get '/login' do

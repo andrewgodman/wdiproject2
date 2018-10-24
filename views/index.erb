@@ -1,0 +1,10 @@
+  <% @activity.each do |activity|%>
+   <div class="activity">
+    <h2>activity</h2>
+    <p>Start Time: <%=activity.start_time%></p>
+    <p>End Time: <%=activity.end_time%></p>
+    <p>Location: <%=activity.location%></p>
+    <p>User: <%=activity.activity_organiser%></p>
+   </div>
+
+  <% end %>
