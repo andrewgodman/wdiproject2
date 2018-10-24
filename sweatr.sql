@@ -15,6 +15,12 @@ CREATE TABLE group_activities(
   end_time TIMESTAMP,
   location VARCHAR(40),
   activity_organiser INTEGER,
-  FOREIGN KEY (activity_organiser) REFERENCES users(id)
+  FOREIGN KEY (activity_organiser) REFERENCES users(id),
+  category INTEGER,
+  FOREIGN KEY (category) REFERENCES activity_categories(id)
 );
 
+CREATE TABLE activity_categories(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(20)
+);
