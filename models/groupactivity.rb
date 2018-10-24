@@ -1,2 +1,2 @@
-class Group_Activity < ActiveRecord::Base
+class GroupActivity < ActiveRecord::Base
 end
