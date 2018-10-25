@@ -86,3 +86,15 @@ post '/activity/new' do
     redirect '/signup'
   end
 end
+
+post '/event/attending' do
+  if logged_in?
+    activity = AttendingActivity.new
+    activity.group_activity_id = params[:activity_id]
+    activity.user_id = current_user.id
+    activity.save
+    redirect '/'
+  else
+    redirect '/signup'
+  end
+end
