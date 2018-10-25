@@ -5,12 +5,14 @@
     <p>End Time: <%=activity.end_time%></p>
     <p>Location: <%=activity.location%></p>
     <p>User: <%=activity.organiser.user_name%></p>
-    <% attending = AttendingActivity.where ("group_activity_id='#{activity.id}'"), ("user_id='#{current_user.id}'") 
-     if logged_in? && activity.organiser.id != current_user.id && attending.blank?%>
-      <form action="/event/attending" method="post">
-      <input type="hidden" name="activity_id" value="<%=activity.id%>">
-      <button>attending</button>
-      </form>
+    <% if logged_in? && activity.organiser.id
+      attending = AttendingActivity.where ("group_activity_id='#{activity.id}'"), ("user_id='#{current_user.id}'") 
+        if logged_in? && activity.organiser.id != current_user.id && attending.blank?%>
+          <form action="/event/attending" method="post">
+          <input type="hidden" name="activity_id" value="<%=activity.id%>">
+          <button>attending</button>
+          </form>
+        <%end%>
     <%end%>
    </div>
   <% end %>
