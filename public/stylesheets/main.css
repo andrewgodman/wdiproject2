@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .signup, .login {
   background-color: dodgerblue;
   float: right;
@@ -5,3 +6,32 @@
 .banner {
   background-color: aqua;
 }
+=======
+.activities {
+  display: grid;
+  grid-template-columns: 500px 500px 500px;
+}
+
+ul {
+  list-style-type: none;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  width: 60px;
+}
+
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 7%;
+}
+
+.logo img {
+  height: auto;
+  width: 100%;
+}
+>>>>>>> navbar

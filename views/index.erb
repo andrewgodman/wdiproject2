@@ -1,16 +1,20 @@
-  <% @activity.each do |activity|%>
-   <div class="activity">
-    <h2>activity</h2>
-    <p>Start Time: <%=activity.start_time%></p>
-    <p>End Time: <%=activity.end_time%></p>
-    <p>Location: <%=activity.location%></p>
-    <p>User: <%=activity.organiser.user_name%></p>
-    <% attending = AttendingActivity.where ("group_activity_id='#{activity.id}'"), ("user_id='#{current_user.id}'") 
-     if logged_in? && activity.organiser.id != current_user.id && attending.blank?%>
+<main> 
+  <div class="activities">
+    <% @activity.each do |activity|%>
+    <div class="activity">
+      <h2>activity</h2>
+      <p>Start Time: <%=activity.start_time%></p>
+      <p>End Time: <%=activity.end_time%></p>
+      <p>Location: <%=activity.location%></p>
+      <p>User: <%=activity.organiser.user_name%></p>
+      <% attending = AttendingActivity.where ("group_activity_id='#{activity.id}'"), ("user_id='#{current_user.id}'") 
+      if logged_in? && activity.organiser.id != current_user.id && attending.blank?%>
       <form action="/event/attending" method="post">
-      <input type="hidden" name="activity_id" value="<%=activity.id%>">
-      <button>attending</button>
+        <input type="hidden" name="activity_id" value="<%=activity.id%>">
+        <button>attending</button>
       </form>
-    <%end%>
-   </div>
-  <% end %>
+      <%end%>
+    </div>
+    <% end %>
+  </div>
+</main>
