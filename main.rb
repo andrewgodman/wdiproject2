@@ -9,6 +9,7 @@ require_relative 'db_config'
 require_relative 'models/user'
 require_relative 'models/groupactivity'
 require_relative 'models/attendingactivity'
+require_relative 'models/ActivityCategory'
 
 enable :sessions
 
@@ -70,6 +71,8 @@ post '/signup' do
 end
 
 post '/activity' do
+  @categories = ActivityCategory.pluck(:name)
+  
   erb :activity
 end
 
