@@ -32,3 +32,6 @@ CREATE TABLE attending_activities(
   FOREIGN KEY (group_activity_id) REFERENCES group_activities (id) ON DELETE CASCADE,
   FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
+
+ALTER TABLE attending_activities 
+ADD CONSTRAINT attending_activities_Unique UNIQUE (user_id, group_activity_id);
