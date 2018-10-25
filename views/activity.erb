@@ -6,4 +6,11 @@
   <label for="location">location</label>
   <input type="text" name="location" id="">
   <button type="submit">save activity</button>
+  <select name="category" id="">
+    <% @categories.each  do |category| %>
+    <option value="<%=category%>"><%=category %></option>
+    <% end %>
+  </select>
+  <input type="text" name="location" id="">
+  <button type="submit">save activity</button>
 </form>
