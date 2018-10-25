@@ -7,10 +7,8 @@
 </head>
 <body>
   <div class="banner"><img src="/images/placeholder-logo.png" alt="logo">
-    <div class="login"> <a href="/login">login</a>
-    </div>
-    <div class="signup"> <a href="/signup">signup</a>
-    </div>
+    <span class="login"> <a href="/login">login</a></span>
+    <span class="signup"> <a href="/signup">signup</a></span>
   </div>
   <% if session[:user_id] %>
     logged in as <%= current_user.email %>
