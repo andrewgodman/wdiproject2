@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-.signup, .login {
-  background-color: dodgerblue;
-  float: right;
-}
-.banner {
-  background-color: aqua;
-}
-=======
 .activities {
   display: grid;
   grid-template-columns: 500px 500px 500px;
@@ -34,4 +25,17 @@ li {
   height: auto;
   width: 100%;
 }
->>>>>>> navbar
+
+.logoutform {
+  display: inherit
+}
+
+.logout {
+  -webkit-appearance: listitem;
+  -moz-appearance: listitem;
+  appearance: listitem;
+  cursor: pointer;
+	cursor: hand;
+  background-color: transparent;
+	text-decoration: underline;
+}

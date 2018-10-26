@@ -6,31 +6,24 @@
   <link rel='stylesheet' href='/stylesheets/main.css'>
 </head>
 <body>
-<<<<<<< HEAD
-  <div class="banner"><img src="/images/placeholder-logo.png" alt="logo">
-    <span class="login"> <a href="/login">login</a></span>
-    <span class="signup"> <a href="/signup">signup</a></span>
-  </div>
-=======
   <nav>
     <div class="logo"><img src="/images/placeholder-logo.png" alt="logo"></div>
     <ul>
       <% if logged_in? %>
-        <li><a href="/login">login</a></li> 
+        <li>
+          <form action="/session" method="post" class="logoutform">
+          <input type="hidden" name="_method" value="delete">
+          <button class="logout">logout</button>
+      </li>
         <% else %>
-        <li><a href="/logout">logout</a></li> 
+        <li><a href="/login">login</a></li> 
+    </form>
       <% end %> 
-      
       <li><a href="/signup">signup</a></li>
     </ul>
   </nav>
->>>>>>> navbar
   <% if session[:user_id] %>
     logged in as <%= current_user.email %>
-    <form action="/session" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <button>logout</button>
-    </form>
 
     <form action="/activity" method="post">
       <button>new event</button>
